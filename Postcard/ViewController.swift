@@ -9,7 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
-                            
+    
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet var messageLabel: UILabel!
     @IBOutlet var enterNameTextField: UITextField!
     @IBOutlet var enterAMessageTextField: UITextField!
@@ -27,13 +28,21 @@ class ViewController: UIViewController {
 
     @IBAction func sendMailButtonPressed(sender: UIButton) {
         // Code will evaluate when we press the button
-        // New comment to test out git commits
+        
         messageLabel.hidden = false
         messageLabel.text = enterAMessageTextField.text
         enterAMessageTextField.text = ""
         enterAMessageTextField.resignFirstResponder()
         messageLabel.textColor = UIColor.redColor()
+
+        nameLabel.hidden = false
+        nameLabel.text = enterNameTextField.text
+        enterNameTextField.text = ""
+        enterNameTextField.resignFirstResponder()
+        nameLabel.textColor = UIColor.blueColor()
+        
         mailButton.setTitle("Mail Sent", forState: UIControlState.Normal)
+        
     }
 }
 
